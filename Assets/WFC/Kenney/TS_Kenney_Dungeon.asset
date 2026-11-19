@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0244d5c6bef591846b093805403fa779, type: 3}
+  m_Name: TS_Kenney_Dungeon
+  m_EditorClassIdentifier: Assembly-CSharp::TesisQA.WFC.WFCTileSet
+  boundarySocket: Closed
+  tiles:
+  - {fileID: 11400000, guid: 7aa2deb5b5d9b6740bffb6c61185717b, type: 2}
+  - {fileID: 11400000, guid: 169e34263b3bd784c955b9bebe78e0ba, type: 2}
+  - {fileID: 11400000, guid: 8f88293ecda13ce4883a1c1fa601a59c, type: 2}
+  - {fileID: 11400000, guid: 63ee6e615ac5eff42bdcebb973568597, type: 2}
+  - {fileID: 11400000, guid: c8e4aff41dabd7d42b154d33fb2d4abe, type: 2}
+  - {fileID: 11400000, guid: e5a39faa260a8e34080a62963f5500a4, type: 2}
+  - {fileID: 11400000, guid: 35732be5f43c61140905e25bed4df02d, type: 2}
+  - {fileID: 11400000, guid: 3657238642dcf2d4695beaff310ba3be, type: 2}
+  - {fileID: 11400000, guid: 7b7f017b5cd3bba4b8557d790e9953a0, type: 2}
+  - {fileID: 11400000, guid: 89bcf87042d03fb41ab64a5f6e60181e, type: 2}
+  - {fileID: 11400000, guid: 42d9413f0e5b323448b59f4fb2bec4ea, type: 2}
+  - {fileID: 11400000, guid: 462d3a369c9349442ae0e2d89c0c2f8b, type: 2}
+  - {fileID: 11400000, guid: 7cd3d672210e88e4c9707e57a3637fde, type: 2}

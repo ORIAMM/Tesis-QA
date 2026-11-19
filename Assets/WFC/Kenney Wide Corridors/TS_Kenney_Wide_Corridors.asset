@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0244d5c6bef591846b093805403fa779, type: 3}
+  m_Name: TS_Kenney_Wide_Corridors
+  m_EditorClassIdentifier: Assembly-CSharp::TesisQA.WFC.WFCTileSet
+  boundarySocket: Closed
+  tiles:
+  - {fileID: 11400000, guid: 00fa510a14476b241bfdd914ccacc41a, type: 2}
+  - {fileID: 11400000, guid: 53ff1e0c1f069d94fb8eaba7d7d5d923, type: 2}
+  - {fileID: 11400000, guid: 1aed87b817483404abcfeef64e2f8857, type: 2}
+  - {fileID: 11400000, guid: 2e8b7133dbc15684c982c78cb28df789, type: 2}
+  - {fileID: 11400000, guid: 8279798f8e728f54bb14df1db9fba0e2, type: 2}
+  - {fileID: 11400000, guid: a9302151a6d5e4043806228b30820f0d, type: 2}
+  - {fileID: 11400000, guid: 6eeea87678fb2404b9b869a38ae950a5, type: 2}

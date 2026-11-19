@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852c77d6afe4085498f708095ea1061f, type: 3}
+  m_Name: CollisionSandbox
+  m_EditorClassIdentifier: Assembly-CSharp::TesisQA.AI.DefectExperimentProtocol
+  protocolId: collision-sandbox-walls-v2
+  detectorVersion: local-floor-wall-v3
+  scorerVersion: collision-region-wall-v3
+  inspectWalls: 1
+  model: {fileID: 5022602860645237092, guid: f548d1ec2f0ff9743a1495081ae792da, type: 3}
+  modelSource: results/Phase3R/Explorer/Explorer-2000063.onnx
+  modelSha256: a6a6410d44a5bffa810553e1f0baa3b9fe4b699a2c8d73c32eb00c6c32d7a9a2
+  meshLibrary: {fileID: 11400000, guid: 380745d7e67d4b9489aa99e51b4333e3, type: 2}
+  durationSeconds: 150
+  policyStepHorizon: 12000
+  fixedDeltaTime: 0.02
+  scanInterval: 0.2
+  scanRange: 6
+  partialHoleWidth: 2.4
+  automaticRepetitions: 3
+  fixedScenarioOrder: 1
+  scenarios:
+  - id: SANDBOX
+    mapSeed: 170023451
+    defectSeed: 271828
+    spawnSeed: 28320
+    fullDefects: 1
+    partialDefects: 1
+    frozenManifest: '{"scenarioId":"SANDBOX","geometrySha256":"27851e24711937e19477c8afc49705a76a6988f65c725dde8cbc232237b03e9a","configurationSha256":"5ae09abd432c67a920183d8604b6cab034f83e4fb350a8fbee1bd88db28e9bb3","requestedMapSeed":170023451,"actualMapSeed":170340211,"defectSeed":271828,"spawnSeed":28320,"spawn":{"x":32.0,"y":0.07999999821186066,"z":24.0},"spawnYaw":90.0,"layout":[{"name":"Wide_Corridor_Corner
+      [1,0,1]","position":{"x":8.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,1]","position":{"x":16.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,1]","position":{"x":24.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,2]","position":{"x":8.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,2]","position":{"x":16.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [3,0,2]","position":{"x":24.0,"y":0.0,"z":18.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [4,0,2]","position":{"x":32.0,"y":0.0,"z":14.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,3]","position":{"x":8.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [2,0,3]","position":{"x":16.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,3]","position":{"x":24.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,0,3]","position":{"x":32.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,4]","position":{"x":8.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,4]","position":{"x":16.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,4]","position":{"x":24.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,0,4]","position":{"x":32.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [1,0,5]","position":{"x":8.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [4,0,5]","position":{"x":32.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [3,1,0]","position":{"x":24.0,"y":4.0,"z":0.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,1]","position":{"x":8.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,1]","position":{"x":16.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,1,1]","position":{"x":24.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":0.00001001791224553017,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,1]","position":{"x":32.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,2]","position":{"x":8.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,3]","position":{"x":8.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,3]","position":{"x":16.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [3,1,3]","position":{"x":24.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,3]","position":{"x":32.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,4]","position":{"x":24.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,4]","position":{"x":32.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}],"defects":[{"id":"SANDBOX-D1","surfaceId":"Wide_Corridor_Corner
+      [1,0,1]#0","kind":0,"center":{"x":8.0,"y":1.1920928955078126e-7,"z":8.0},"floor":0,"width":0.0},{"id":"SANDBOX-D2","surfaceId":"Wide_Corridor_Straight
+      [2,1,3]#24","kind":1,"center":{"x":16.0,"y":4.0,"z":24.0},"floor":1,"width":2.4000000953674318}]}'

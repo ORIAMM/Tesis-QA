@@ -1,0 +1,89 @@
+behaviors:
+  Explorer:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 20480
+      learning_rate: 1.5e-4
+      beta: 5.0e-3
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 256
+      num_layers: 2
+      memory:
+        sequence_length: 64
+        memory_size: 128
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+      curiosity:
+        gamma: 0.99
+        strength: 0.005
+        encoding_size: 256
+        learning_rate: 3.0e-4
+    # Phase 3A geometry-only rays (no tag channels); run this phase first.
+    init_path: results\Explorer_Phase3_Stairs_v10\Explorer\checkpoint.pt
+    max_steps: 3.0e6
+    time_horizon: 128
+    summary_freq: 10000
+    keep_checkpoints: 5
+    checkpoint_interval: 600000
+
+environment_parameters:
+  wfc_training_stage:
+    curriculum:
+      # Begin at the adjacent-stair lesson from the Phase 3A checkpoint. The
+      # one-floor lesson in v15 did not address the failed stair approach.
+      - name: AdjacentStairCoverTwoPercent
+        completion_criteria:
+          measure: reward
+          behavior: Explorer
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 0.65
+          require_reset: true
+        value: 1
+      - name: FindStairOneStepCoverFivePercent
+        completion_criteria:
+          measure: reward
+          behavior: Explorer
+          signal_smoothing: true
+          min_lesson_length: 750
+          threshold: 0.60
+          require_reset: true
+        value: 2
+      # Stage 3 introduces 25% descending episodes. Stages 4-6 are 50:50.
+      - name: FindStairTwoStepsCoverEightPercent
+        completion_criteria:
+          measure: reward
+          behavior: Explorer
+          signal_smoothing: true
+          min_lesson_length: 1000
+          threshold: 0.55
+          require_reset: true
+        value: 3
+      - name: MixedDirectionsCoverTenPercent
+        completion_criteria:
+          measure: reward
+          behavior: Explorer
+          signal_smoothing: true
+          min_lesson_length: 1250
+          threshold: 0.55
+          require_reset: true
+        value: 4
+      - name: BalancedDirectionsCoverFourteenPercent
+        completion_criteria:
+          measure: reward
+          behavior: Explorer
+          signal_smoothing: true
+          min_lesson_length: 1500
+          threshold: 0.55
+          require_reset: true
+        value: 5
+      - name: FullMapExploreEighteenPercent
+        value: 6

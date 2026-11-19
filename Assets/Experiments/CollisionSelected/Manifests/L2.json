@@ -1,0 +1,493 @@
+{
+    "scenarioId": "L2",
+    "geometrySha256": "6e8c53bc1aa8f0b0255dcbeffcea22187e88f9c46f2d806ac4894f6264abe785",
+    "configurationSha256": "89d6c7b59f6778d55ee8d2175d33ba1328ea77c3f7944f8bfcac1c8d29f90a7d",
+    "requestedMapSeed": 281104102,
+    "actualMapSeed": 281492133,
+    "defectSeed": 411032861,
+    "spawnSeed": 28323,
+    "spawn": {
+        "x": 8.0,
+        "y": 4.079999923706055,
+        "z": 32.0
+    },
+    "spawnYaw": 0.0,
+    "layout": [
+        {
+            "name": "Wide_Corridor_End [1,0,0]",
+            "position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [1,0,1]",
+            "position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": 8.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [2,0,1]",
+            "position": {
+                "x": 16.0,
+                "y": 0.0,
+                "z": 8.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Stairs [3,0,1]",
+            "position": {
+                "x": 22.0,
+                "y": 0.0,
+                "z": 8.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 270.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [4,0,1]",
+            "position": {
+                "x": 32.0,
+                "y": 0.0,
+                "z": 8.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Stairs [1,0,2]",
+            "position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": 14.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [2,0,2]",
+            "position": {
+                "x": 16.0,
+                "y": 0.0,
+                "z": 16.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Junction [3,0,2]",
+            "position": {
+                "x": 24.0,
+                "y": 0.0,
+                "z": 16.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Junction [4,0,2]",
+            "position": {
+                "x": 32.0,
+                "y": 0.0,
+                "z": 16.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.00000762939453,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Straight [1,0,3]",
+            "position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": 24.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [2,0,3]",
+            "position": {
+                "x": 16.0,
+                "y": 0.0,
+                "z": 24.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 270.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Junction [3,0,3]",
+            "position": {
+                "x": 24.0,
+                "y": 0.0,
+                "z": 24.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.00000762939453,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Straight [4,0,3]",
+            "position": {
+                "x": 32.0,
+                "y": 0.0,
+                "z": 24.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [1,0,4]",
+            "position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": 32.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [2,0,4]",
+            "position": {
+                "x": 16.0,
+                "y": 0.0,
+                "z": 32.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.00000762939453,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [3,0,4]",
+            "position": {
+                "x": 24.0,
+                "y": 0.0,
+                "z": 32.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [4,0,4]",
+            "position": {
+                "x": 32.0,
+                "y": 0.0,
+                "z": 32.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.00000762939453,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_End [0,1,1]",
+            "position": {
+                "x": 0.0,
+                "y": 4.0,
+                "z": 8.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [1,1,1]",
+            "position": {
+                "x": 8.0,
+                "y": 4.0,
+                "z": 8.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [2,1,1]",
+            "position": {
+                "x": 16.0,
+                "y": 4.0,
+                "z": 8.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 270.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Straight [2,1,2]",
+            "position": {
+                "x": 16.0,
+                "y": 4.0,
+                "z": 16.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 270.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [1,1,3]",
+            "position": {
+                "x": 8.0,
+                "y": 4.0,
+                "z": 24.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 270.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Junction [2,1,3]",
+            "position": {
+                "x": 16.0,
+                "y": 4.0,
+                "z": 24.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.00000762939453,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [1,1,4]",
+            "position": {
+                "x": 8.0,
+                "y": 4.0,
+                "z": 32.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        },
+        {
+            "name": "Wide_Corridor_Corner [2,1,4]",
+            "position": {
+                "x": 16.0,
+                "y": 4.0,
+                "z": 32.0
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.00000762939453,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            }
+        }
+    ],
+    "defects": [
+        {
+            "id": "L2-D1",
+            "surfaceId": "Wide_Corridor_Junction [3,0,2]#7",
+            "kind": 0,
+            "center": {
+                "x": 24.0,
+                "y": 0.0,
+                "z": 16.0
+            },
+            "floor": 0,
+            "width": 0.0
+        },
+        {
+            "id": "L2-D2",
+            "surfaceId": "Wide_Corridor_Corner [1,1,1]#18",
+            "kind": 1,
+            "center": {
+                "x": 8.0,
+                "y": 4.0,
+                "z": 8.0
+            },
+            "floor": 1,
+            "width": 2.4000000953674318
+        }
+    ]
+}

@@ -1,0 +1,514 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852c77d6afe4085498f708095ea1061f, type: 3}
+  m_Name: CollisionSelected
+  m_EditorClassIdentifier: Assembly-CSharp::TesisQA.AI.DefectExperimentProtocol
+  protocolId: collision-small-large-study-v1
+  detectorVersion: local-floor-wall-v3
+  scorerVersion: collision-region-wall-v3
+  inspectWalls: 1
+  deterministicInference: 1
+  fixedStepTransitions: 1
+  model: {fileID: 5022602860645237092, guid: f548d1ec2f0ff9743a1495081ae792da, type: 3}
+  modelSource: results/Phase3R/Explorer/Explorer-2000063.onnx
+  modelSha256: a6a6410d44a5bffa810553e1f0baa3b9fe4b699a2c8d73c32eb00c6c32d7a9a2
+  meshLibrary: {fileID: 11400000, guid: 380745d7e67d4b9489aa99e51b4333e3, type: 2}
+  durationSeconds: 150
+  policyStepHorizon: 12000
+  fixedDeltaTime: 0.02
+  scanInterval: 0.2
+  scanRange: 6
+  partialHoleWidth: 2.4
+  automaticRepetitions: 3
+  fixedScenarioOrder: 1
+  scenarios:
+  - id: L1
+    mapSeed: 281008198
+    defectSeed: 411016382
+    spawnSeed: 28324
+    fullDefects: 1
+    partialDefects: 0
+    gridSize: {x: 6, y: 2, z: 6}
+    frozenManifest: '{"scenarioId":"L1","geometrySha256":"aef51e8544297a14e2029f56e12a8ff147d860ac6116973999d63a85dec8b222","configurationSha256":"89d6c7b59f6778d55ee8d2175d33ba1328ea77c3f7944f8bfcac1c8d29f90a7d","requestedMapSeed":281008198,"actualMapSeed":281301201,"defectSeed":411016382,"spawnSeed":28324,"spawn":{"x":32.0,"y":0.08000011742115021,"z":24.0},"spawnYaw":180.0,"layout":[{"name":"Wide_Corridor_Corner
+      [1,0,1]","position":{"x":8.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,0,1]","position":{"x":16.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [3,0,1]","position":{"x":26.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,2]","position":{"x":8.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,2]","position":{"x":16.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [3,0,2]","position":{"x":26.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,3]","position":{"x":8.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,3]","position":{"x":24.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,3]","position":{"x":32.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,4]","position":{"x":8.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,4]","position":{"x":16.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,0,4]","position":{"x":24.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.00001001791224553017,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,4]","position":{"x":32.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [4,1,0]","position":{"x":32.0,"y":4.0,"z":0.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,1]","position":{"x":32.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,2]","position":{"x":32.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [5,1,2]","position":{"x":40.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}],"defects":[{"id":"L1-D1","surfaceId":"Wide_Corridor_Corner
+      [1,0,1]#0","kind":0,"center":{"x":8.0,"y":1.1920928955078126e-7,"z":8.0},"floor":0,"width":0.0}]}'
+  - id: L2
+    mapSeed: 281104102
+    defectSeed: 411032861
+    spawnSeed: 28323
+    fullDefects: 1
+    partialDefects: 1
+    gridSize: {x: 6, y: 2, z: 6}
+    frozenManifest: '{"scenarioId":"L2","geometrySha256":"6e8c53bc1aa8f0b0255dcbeffcea22187e88f9c46f2d806ac4894f6264abe785","configurationSha256":"89d6c7b59f6778d55ee8d2175d33ba1328ea77c3f7944f8bfcac1c8d29f90a7d","requestedMapSeed":281104102,"actualMapSeed":281492133,"defectSeed":411032861,"spawnSeed":28323,"spawn":{"x":8.0,"y":4.079999923706055,"z":32.0},"spawnYaw":0.0,"layout":[{"name":"Wide_Corridor_End
+      [1,0,0]","position":{"x":8.0,"y":0.0,"z":0.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,1]","position":{"x":8.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,1]","position":{"x":16.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [3,0,1]","position":{"x":22.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,1]","position":{"x":32.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [1,0,2]","position":{"x":8.0,"y":0.0,"z":14.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,2]","position":{"x":16.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,0,2]","position":{"x":24.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [4,0,2]","position":{"x":32.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,3]","position":{"x":8.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,3]","position":{"x":16.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,0,3]","position":{"x":24.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,0,3]","position":{"x":32.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,4]","position":{"x":8.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,4]","position":{"x":16.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,4]","position":{"x":24.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,4]","position":{"x":32.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [0,1,1]","position":{"x":0.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,1]","position":{"x":8.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,1,1]","position":{"x":16.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,2]","position":{"x":16.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,3]","position":{"x":8.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,1,3]","position":{"x":16.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,4]","position":{"x":8.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,1,4]","position":{"x":16.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}],"defects":[{"id":"L2-D1","surfaceId":"Wide_Corridor_Junction
+      [3,0,2]#7","kind":0,"center":{"x":24.0,"y":0.0,"z":16.0},"floor":0,"width":0.0},{"id":"L2-D2","surfaceId":"Wide_Corridor_Corner
+      [1,1,1]#18","kind":1,"center":{"x":8.0,"y":4.0,"z":8.0},"floor":1,"width":2.4000000953674318}]}'
+  - id: L3
+    mapSeed: 283827465
+    defectSeed: 416250625
+    spawnSeed: 52039
+    fullDefects: 1
+    partialDefects: 1
+    gridSize: {x: 6, y: 2, z: 6}
+    frozenManifest: '{"scenarioId":"L3","geometrySha256":"533c8ffe4e06dc1c5f6713f05945afe8e7c38f728373140d4dc43f396bfa03d7","configurationSha256":"89d6c7b59f6778d55ee8d2175d33ba1328ea77c3f7944f8bfcac1c8d29f90a7d","requestedMapSeed":283827465,"actualMapSeed":284112549,"defectSeed":416250625,"spawnSeed":52039,"spawn":{"x":8.0,"y":4.079999923706055,"z":32.0},"spawnYaw":180.0,"layout":[{"name":"Wide_Corridor_End
+      [4,0,0]","position":{"x":32.0,"y":0.0,"z":0.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,1]","position":{"x":8.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [2,0,1]","position":{"x":18.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,1]","position":{"x":24.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,1]","position":{"x":32.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,2]","position":{"x":8.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,2]","position":{"x":16.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [3,0,2]","position":{"x":24.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,2]","position":{"x":32.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,3]","position":{"x":8.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [2,0,3]","position":{"x":16.0,"y":0.0,"z":26.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,0,3]","position":{"x":24.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,3]","position":{"x":32.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [5,0,3]","position":{"x":40.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,4]","position":{"x":8.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,4]","position":{"x":16.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,4]","position":{"x":24.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,1]","position":{"x":24.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,1]","position":{"x":32.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,2]","position":{"x":8.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,2]","position":{"x":16.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,2]","position":{"x":24.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,2]","position":{"x":32.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,3]","position":{"x":8.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,3]","position":{"x":24.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,3]","position":{"x":32.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,4]","position":{"x":8.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,1,4]","position":{"x":16.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,4]","position":{"x":24.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,4]","position":{"x":32.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}],"defects":[{"id":"L3-D1","surfaceId":"Wide_Corridor_End
+      [4,0,0]#0","kind":0,"center":{"x":32.0,"y":0.0,"z":0.0},"floor":0,"width":0.0},{"id":"L3-D2","surfaceId":"Wide_Corridor_Straight
+      [2,1,2]#20","kind":1,"center":{"x":16.0,"y":4.0,"z":16.0},"floor":1,"width":2.4000000953674318}]}'
+  - id: L4
+    mapSeed: 283113394
+    defectSeed: 414424226
+    spawnSeed: 43790
+    fullDefects: 1
+    partialDefects: 0
+    gridSize: {x: 12, y: 2, z: 12}
+    frozenManifest: '{"scenarioId":"L4","geometrySha256":"3b5c11ed807a73e163383474f2e4b21e18d3622c0ff5aac4105e184a82a37f58","configurationSha256":"4b44b50e3d08d313e52947480b36dd43eaff90fb52be10f8e4ef28309a7acf06","requestedMapSeed":283113394,"actualMapSeed":283113394,"defectSeed":414424226,"spawnSeed":43790,"spawn":{"x":64.0,"y":0.08000011742115021,"z":40.0},"spawnYaw":270.0,"layout":[{"name":"Wide_Corridor_Corner
+      [1,0,1]","position":{"x":8.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,1]","position":{"x":16.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,0,1]","position":{"x":24.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,0,1]","position":{"x":32.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,1]","position":{"x":40.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,0,1]","position":{"x":48.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,0,1]","position":{"x":56.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,0,1]","position":{"x":64.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,0,1]","position":{"x":72.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,0,1]","position":{"x":80.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,2]","position":{"x":8.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,2]","position":{"x":24.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,0,2]","position":{"x":32.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,2]","position":{"x":40.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,2]","position":{"x":48.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,0,2]","position":{"x":56.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,0,2]","position":{"x":64.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,2]","position":{"x":72.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,2]","position":{"x":80.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [1,0,3]","position":{"x":8.0,"y":0.0,"z":26.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,3]","position":{"x":16.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [3,0,3]","position":{"x":24.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,0,3]","position":{"x":32.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,3]","position":{"x":40.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,3]","position":{"x":48.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,0,3]","position":{"x":56.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,0,3]","position":{"x":64.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [9,0,3]","position":{"x":72.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [10,0,3]","position":{"x":80.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,4]","position":{"x":16.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,0,4]","position":{"x":24.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,4]","position":{"x":40.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [6,0,4]","position":{"x":48.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,0,4]","position":{"x":56.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [8,0,4]","position":{"x":64.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,0,4]","position":{"x":72.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,4]","position":{"x":80.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,5]","position":{"x":8.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,0,5]","position":{"x":16.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,0,5]","position":{"x":24.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,5]","position":{"x":32.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,0,5]","position":{"x":40.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [6,0,5]","position":{"x":48.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,0,5]","position":{"x":56.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,0,5]","position":{"x":64.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,0,5]","position":{"x":72.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,5]","position":{"x":80.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,6]","position":{"x":8.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,6]","position":{"x":16.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,0,6]","position":{"x":24.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,6]","position":{"x":32.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,6]","position":{"x":40.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,0,6]","position":{"x":48.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [7,0,6]","position":{"x":56.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,0,6]","position":{"x":64.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [9,0,6]","position":{"x":72.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,6]","position":{"x":80.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,7]","position":{"x":8.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,0,7]","position":{"x":16.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,0,7]","position":{"x":24.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,7]","position":{"x":32.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [5,0,7]","position":{"x":40.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,7]","position":{"x":48.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [7,0,7]","position":{"x":56.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,0,7]","position":{"x":64.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,0,7]","position":{"x":72.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,7]","position":{"x":80.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,8]","position":{"x":16.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [3,0,8]","position":{"x":24.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,8]","position":{"x":32.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,0,8]","position":{"x":40.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,0,8]","position":{"x":56.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [8,0,8]","position":{"x":64.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,8]","position":{"x":72.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,8]","position":{"x":80.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [0,0,9]","position":{"x":0.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,9]","position":{"x":8.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [2,0,9]","position":{"x":16.0,"y":0.0,"z":70.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,9]","position":{"x":24.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [4,0,9]","position":{"x":32.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [5,0,9]","position":{"x":40.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,9]","position":{"x":48.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,0,9]","position":{"x":56.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [8,0,9]","position":{"x":64.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,9]","position":{"x":72.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,0,9]","position":{"x":80.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,0,10]","position":{"x":8.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,10]","position":{"x":16.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,10]","position":{"x":32.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,10]","position":{"x":40.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,0,10]","position":{"x":64.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,10]","position":{"x":72.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [4,1,0]","position":{"x":32.0,"y":4.0,"z":0.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,1]","position":{"x":32.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,1,1]","position":{"x":40.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,1,1]","position":{"x":48.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,1,1]","position":{"x":56.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,1]","position":{"x":64.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,1]","position":{"x":72.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,1]","position":{"x":80.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,2]","position":{"x":32.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,1,2]","position":{"x":40.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [6,1,2]","position":{"x":48.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,1,2]","position":{"x":56.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [8,1,2]","position":{"x":64.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [9,1,2]","position":{"x":72.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,2]","position":{"x":80.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,3]","position":{"x":32.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,3]","position":{"x":40.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,3]","position":{"x":48.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,1,3]","position":{"x":56.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,3]","position":{"x":64.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,3]","position":{"x":72.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,3]","position":{"x":80.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,4]","position":{"x":8.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,1,4]","position":{"x":16.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,4]","position":{"x":24.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,4]","position":{"x":32.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,1,4]","position":{"x":40.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,4]","position":{"x":48.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [7,1,4]","position":{"x":56.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,4]","position":{"x":64.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [9,1,4]","position":{"x":72.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,4]","position":{"x":80.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,5]","position":{"x":8.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,1,5]","position":{"x":16.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,5]","position":{"x":24.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [4,1,5]","position":{"x":32.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,5]","position":{"x":40.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,5]","position":{"x":48.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [7,1,5]","position":{"x":56.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,5]","position":{"x":64.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,1,5]","position":{"x":72.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,5]","position":{"x":80.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,6]","position":{"x":8.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,1,6]","position":{"x":16.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,6]","position":{"x":24.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,6]","position":{"x":32.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [5,1,6]","position":{"x":40.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,1,6]","position":{"x":48.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [7,1,6]","position":{"x":56.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,1,6]","position":{"x":64.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [9,1,6]","position":{"x":72.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,6]","position":{"x":80.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [0,1,7]","position":{"x":0.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [1,1,7]","position":{"x":8.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [2,1,7]","position":{"x":16.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [3,1,7]","position":{"x":24.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,7]","position":{"x":32.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [5,1,7]","position":{"x":40.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,1,7]","position":{"x":56.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,1,7]","position":{"x":64.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,7]","position":{"x":72.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,7]","position":{"x":80.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,8]","position":{"x":8.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,8]","position":{"x":16.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,1,8]","position":{"x":24.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,8]","position":{"x":32.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,1,8]","position":{"x":40.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,8]","position":{"x":48.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,1,8]","position":{"x":56.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [8,1,8]","position":{"x":64.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,8]","position":{"x":72.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,8]","position":{"x":80.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,9]","position":{"x":8.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,9]","position":{"x":24.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,9]","position":{"x":32.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,9]","position":{"x":48.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [7,1,9]","position":{"x":56.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [8,1,9]","position":{"x":64.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [9,1,9]","position":{"x":72.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,9]","position":{"x":80.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,10]","position":{"x":8.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,10]","position":{"x":16.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,10]","position":{"x":24.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,10]","position":{"x":32.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,10]","position":{"x":40.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,1,10]","position":{"x":48.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,1,10]","position":{"x":56.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,10]","position":{"x":64.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,10]","position":{"x":72.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}],"defects":[{"id":"L4-D1","surfaceId":"Wide_Corridor_Straight
+      [7,0,1]#6","kind":0,"center":{"x":56.0,"y":0.0,"z":8.0},"floor":0,"width":0.0}]}'
+  - id: L5
+    mapSeed: 281555774
+    defectSeed: 411311646
+    spawnSeed: 29730
+    fullDefects: 1
+    partialDefects: 1
+    gridSize: {x: 12, y: 2, z: 12}
+    frozenManifest: '{"scenarioId":"L5","geometrySha256":"c3eee409a44e677aca47aeec421b8152b730aa7e3067232fc7e8bb827693c126","configurationSha256":"4b44b50e3d08d313e52947480b36dd43eaff90fb52be10f8e4ef28309a7acf06","requestedMapSeed":281555774,"actualMapSeed":281571612,"defectSeed":411311646,"spawnSeed":29730,"spawn":{"x":40.0,"y":0.08000011742115021,"z":8.0},"spawnYaw":90.0,"layout":[{"name":"Wide_Corridor_Corner
+      [1,0,1]","position":{"x":8.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,1]","position":{"x":16.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,0,1]","position":{"x":24.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,1]","position":{"x":32.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,1]","position":{"x":40.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,1]","position":{"x":48.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,0,1]","position":{"x":56.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,0,1]","position":{"x":64.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,1]","position":{"x":72.0,"y":0.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,2]","position":{"x":8.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,2]","position":{"x":24.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [4,0,2]","position":{"x":32.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [5,0,2]","position":{"x":40.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,2]","position":{"x":48.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,0,2]","position":{"x":56.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,0,2]","position":{"x":64.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,2]","position":{"x":72.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,0,2]","position":{"x":80.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [11,0,2]","position":{"x":88.0,"y":0.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [1,0,3]","position":{"x":8.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,0,3]","position":{"x":16.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,0,3]","position":{"x":24.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,3]","position":{"x":32.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,3]","position":{"x":40.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,0,3]","position":{"x":48.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,0,3]","position":{"x":56.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,3]","position":{"x":80.0,"y":0.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,4]","position":{"x":8.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,4]","position":{"x":16.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,4]","position":{"x":24.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,4]","position":{"x":32.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,4]","position":{"x":48.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,0,4]","position":{"x":56.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,0,4]","position":{"x":64.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,4]","position":{"x":80.0,"y":0.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,5]","position":{"x":8.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,0,5]","position":{"x":16.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,0,5]","position":{"x":24.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [4,0,5]","position":{"x":32.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,5]","position":{"x":40.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [6,0,5]","position":{"x":48.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [7,0,5]","position":{"x":56.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [8,0,5]","position":{"x":64.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":0.00001001791224553017,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,5]","position":{"x":72.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,0,5]","position":{"x":80.0,"y":0.0,"z":40.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,6]","position":{"x":8.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,6]","position":{"x":16.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [3,0,6]","position":{"x":24.0,"y":0.0,"z":46.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,6]","position":{"x":32.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,6]","position":{"x":40.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [6,0,6]","position":{"x":48.0,"y":0.0,"z":50.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [7,0,6]","position":{"x":56.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,0,6]","position":{"x":64.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [9,0,6]","position":{"x":72.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,0,6]","position":{"x":80.0,"y":0.0,"z":48.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,7]","position":{"x":8.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,7]","position":{"x":16.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,0,7]","position":{"x":24.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":0.00001001791224553017,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,7]","position":{"x":32.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [5,0,7]","position":{"x":40.0,"y":0.0,"z":54.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,0,7]","position":{"x":56.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,0,7]","position":{"x":72.0,"y":0.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,0,8]","position":{"x":8.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,8]","position":{"x":16.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,8]","position":{"x":24.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,0,8]","position":{"x":32.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,0,8]","position":{"x":40.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,0,8]","position":{"x":48.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [7,0,8]","position":{"x":56.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,0,8]","position":{"x":64.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,8]","position":{"x":72.0,"y":0.0,"z":64.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Stairs
+      [1,0,9]","position":{"x":8.0,"y":0.0,"z":74.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,0,9]","position":{"x":16.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [3,0,9]","position":{"x":24.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,0,9]","position":{"x":32.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,0,9]","position":{"x":40.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,0,9]","position":{"x":48.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,0,9]","position":{"x":56.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [8,0,9]","position":{"x":64.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,9]","position":{"x":72.0,"y":0.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,0,10]","position":{"x":16.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,0,10]","position":{"x":24.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,0,10]","position":{"x":40.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,0,10]","position":{"x":48.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,0,10]","position":{"x":64.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,0,10]","position":{"x":72.0,"y":0.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,1]","position":{"x":8.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,1,1]","position":{"x":16.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,1]","position":{"x":24.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,1]","position":{"x":32.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [5,1,1]","position":{"x":40.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,1]","position":{"x":48.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,1,1]","position":{"x":56.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,1]","position":{"x":64.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,1,1]","position":{"x":72.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,1]","position":{"x":80.0,"y":4.0,"z":8.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [1,1,2]","position":{"x":8.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [2,1,2]","position":{"x":16.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,2]","position":{"x":24.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,2]","position":{"x":32.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [5,1,2]","position":{"x":40.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.00001001791224553017,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [6,1,2]","position":{"x":48.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [7,1,2]","position":{"x":56.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [8,1,2]","position":{"x":64.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,2]","position":{"x":72.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,2]","position":{"x":80.0,"y":4.0,"z":16.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,3]","position":{"x":8.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,3]","position":{"x":16.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [3,1,3]","position":{"x":24.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,3]","position":{"x":32.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,3]","position":{"x":40.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,3]","position":{"x":48.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [7,1,3]","position":{"x":56.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,3]","position":{"x":64.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,1,3]","position":{"x":72.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,3]","position":{"x":80.0,"y":4.0,"z":24.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,4]","position":{"x":8.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [2,1,4]","position":{"x":16.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [3,1,4]","position":{"x":24.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,4]","position":{"x":32.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,4]","position":{"x":40.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,4]","position":{"x":48.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [7,1,4]","position":{"x":56.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,1,4]","position":{"x":64.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [9,1,4]","position":{"x":72.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":0.00001001791224553017,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,4]","position":{"x":80.0,"y":4.0,"z":32.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,5]","position":{"x":8.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,1,5]","position":{"x":16.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,5]","position":{"x":24.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,5]","position":{"x":32.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [5,1,5]","position":{"x":40.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,5]","position":{"x":48.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,1,5]","position":{"x":56.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,5]","position":{"x":64.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,5]","position":{"x":72.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,5]","position":{"x":80.0,"y":4.0,"z":40.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,6]","position":{"x":8.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,6]","position":{"x":16.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,6]","position":{"x":32.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,6]","position":{"x":40.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,1,6]","position":{"x":64.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":90.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,1,6]","position":{"x":72.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,6]","position":{"x":80.0,"y":4.0,"z":48.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [1,1,7]","position":{"x":8.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":270.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,1,7]","position":{"x":16.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,7]","position":{"x":24.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [4,1,7]","position":{"x":32.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [6,1,7]","position":{"x":48.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [7,1,7]","position":{"x":56.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [8,1,7]","position":{"x":64.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,7]","position":{"x":72.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [10,1,7]","position":{"x":80.0,"y":4.0,"z":56.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,8]","position":{"x":8.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [2,1,8]","position":{"x":16.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,8]","position":{"x":24.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,8]","position":{"x":32.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,8]","position":{"x":40.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,1,8]","position":{"x":48.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Junction
+      [7,1,8]","position":{"x":56.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,1,8]","position":{"x":64.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [9,1,8]","position":{"x":72.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [10,1,8]","position":{"x":80.0,"y":4.0,"z":64.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [2,1,9]","position":{"x":16.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,9]","position":{"x":24.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,9]","position":{"x":32.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,9]","position":{"x":40.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,1,9]","position":{"x":48.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Intersection
+      [7,1,9]","position":{"x":56.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [8,1,9]","position":{"x":64.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,9]","position":{"x":72.0,"y":4.0,"z":72.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [1,1,10]","position":{"x":8.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [2,1,10]","position":{"x":16.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [3,1,10]","position":{"x":24.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [4,1,10]","position":{"x":32.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [5,1,10]","position":{"x":40.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [6,1,10]","position":{"x":48.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":180.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [7,1,10]","position":{"x":56.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":90.00000762939453,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Corner
+      [9,1,10]","position":{"x":72.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_Straight
+      [10,1,10]","position":{"x":80.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}},{"name":"Wide_Corridor_End
+      [11,1,10]","position":{"x":88.0,"y":4.0,"z":80.0},"euler":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}],"defects":[{"id":"L5-D1","surfaceId":"Wide_Corridor_Straight
+      [2,0,6]#46","kind":0,"center":{"x":16.0,"y":0.0,"z":48.0},"floor":0,"width":0.0},{"id":"L5-D2","surfaceId":"Wide_Corridor_Corner
+      [9,1,9]#169","kind":1,"center":{"x":72.0,"y":4.0,"z":72.0},"floor":1,"width":2.4000000953674318}]}'
